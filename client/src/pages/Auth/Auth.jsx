@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Auth.css';
 import Logo from '../../img/logo.png';
 import { logIn, signUp } from '../../actions/AuthActions.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import GoogleLogin from 'react-google-login';
+import { gapi } from 'gapi-script';
+import GitHubLogin from 'react-github-login';
 
-const Auth = () => {
+const Auth = (props) => {
   const initialState = {
     firstname: '',
     lastname: '',
@@ -48,6 +52,45 @@ const Auth = () => {
     }
   };
 
+  const clientId =
+    '816998418840-h8onf3qjb9dolporn5iref5aiqrmu1ju.apps.googleusercontent.com';
+
+  useEffect(() => {
+    gapi.load('client:auth2', () => {
+      gapi.auth2.init({ clientId: clientId });
+    });
+  }, []);
+
+  const responseGoogle = (response) => {
+    // console.log(response);
+    // console.log(response.profileObj.email);
+
+    let data = {
+      username: response.profileObj.name,
+      firstname: response.profileObj.givenName,
+
+      lastname: response.profileObj.familyName,
+      password: response.profileObj.name,
+      confirmpass: response.profileObj.name,
+    };
+
+    // axios
+    //   .post('http://localhost:5000/google', { idToken: response.tokenId })
+    //   .then(() => {
+    // console.log(response)
+    if (isSignUp) {
+      dispatch(logIn(data, navigate));
+    } else {
+      dispatch(logIn(data, navigate));
+    }
+    // })
+    // .catch((err) => {
+    //   console.log(err);
+    // });
+  };
+
+  const onSuccess = (response) => console.log(response);
+  const onFailure = (response) => console.error(response);
   return (
     <div className="Auth">
       {/* left side */}
@@ -65,6 +108,24 @@ const Auth = () => {
 
       <div className="a-right">
         <form className="infoForm authForm" onSubmit={handleSubmit}>
+          <div>
+            <GoogleLogin
+              clientId={clientId}
+              buttonText="Google"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={'single_host_origin'}
+            />
+          </div>
+          {/* <br />
+          <GitHubLogin
+            clientId="6bf27ea26ec0b5879e94"
+            onSuccess={onSuccess}
+            onFailure={onFailure}
+          /> */}
+          <hr style={{ width: '300px' }}></hr>
+          <h5>Or with email and password</h5>
+
           <h3>{isSignUp ? 'Register' : 'Login'}</h3>
           {isSignUp && (
             <div>

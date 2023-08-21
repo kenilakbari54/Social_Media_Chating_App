@@ -5,9 +5,16 @@ import Auth from "./pages/Auth/Auth";
 import Profile from "./pages/Profile/Profile";
 import { useSelector } from "react-redux";
 import Chat from "./pages/Chat/Chat";
+import { useState } from "react";
 
 function App() {
   const user = useSelector((state) => state.authReducer.authData);
+  const [stateAuth, setStateAuth] = useState()
+
+  const responce = (res) => {
+    setStateAuth(res)
+  }
+
   return (
     <div
       className="App"
@@ -31,7 +38,7 @@ function App() {
         />
         <Route
           path="/auth"
-          element={user ? <Navigate to="../home" /> : <Auth />}
+          element={user ? <Navigate to="../home" /> : <Auth responce={responce} />}
         />
         <Route
           path="/profile/:id"

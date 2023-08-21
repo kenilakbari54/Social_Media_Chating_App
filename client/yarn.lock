@@ -4735,6 +4735,11 @@
   "resolved" "https://registry.npmjs.org/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz"
   "version" "1.0.1"
 
+"gapi-script@^1.2.0":
+  "integrity" "sha512-NKTVKiIwFdkO1j1EzcrWu/Pz7gsl1GmBmgh+qhuV2Ytls04W/Eg5aiBL91SCiBM9lU0PMu7p1hTVxhh1rPT5Lw=="
+  "resolved" "https://registry.npmjs.org/gapi-script/-/gapi-script-1.2.0.tgz"
+  "version" "1.2.0"
+
 "gensync@^1.0.0-beta.2":
   "integrity" "sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg=="
   "resolved" "https://registry.npmjs.org/gensync/-/gensync-1.0.0-beta.2.tgz"
@@ -6199,6 +6204,11 @@
   dependencies:
     "tmpl" "1.0.5"
 
+"mdb-ui-kit@^6.4.1":
+  "integrity" "sha512-5YjAGSpoZ40+xsjSiyRQR6xvwJn/lBMeuCNqUds7fArlYKwK8yP8vMZjLK51tCLNmhcnAurD/7HCiRYi0YRjPA=="
+  "resolved" "https://registry.npmjs.org/mdb-ui-kit/-/mdb-ui-kit-6.4.1.tgz"
+  "version" "6.4.1"
+
 "mdn-data@2.0.14":
   "integrity" "sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow=="
   "resolved" "https://registry.npmjs.org/mdn-data/-/mdn-data-2.0.14.tgz"
@@ -7488,7 +7498,7 @@
     "strip-ansi" "^6.0.1"
     "text-table" "^0.2.0"
 
-"react-dom@*", "react-dom@^16.8 || ^17.0 || ^18.0", "react-dom@^16.8.0 || ^17 || ^18", "react-dom@^17.0.2", "react-dom@>=16.8", "react-dom@>=16.8.0", "react-dom@>=17.0.x":
+"react-dom@*", "react-dom@^16 || ^17", "react-dom@^16.8 || ^17.0 || ^18.0", "react-dom@^16.8.0 || ^17 || ^18", "react-dom@^17.0.2", "react-dom@>=16.8", "react-dom@>=16.8.0", "react-dom@>=17.0.x":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -7502,6 +7512,11 @@
   "resolved" "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.10.tgz"
   "version" "6.0.10"
 
+"react-facebook-login@^4.1.1":
+  "integrity" "sha512-COnHEHlYGTKipz4963safFAK9PaNTcCiXfPXMS/yxo8El+/AJL5ye8kMJf23lKSSGGPgqFQuInskIHVqGqTvSw=="
+  "resolved" "https://registry.npmjs.org/react-facebook-login/-/react-facebook-login-4.1.1.tgz"
+  "version" "4.1.1"
+
 "react-fast-compare@^3.0.1":
   "integrity" "sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA=="
   "resolved" "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
@@ -7513,6 +7528,19 @@
   "version" "1.0.3"
   dependencies:
     "react" "^15.6.1"
+
+"react-github-login@^1.0.3":
+  "integrity" "sha512-SkXwkjUdTgXEISaQkC9+zR1Cm/AcDQSVon956SvPeBWL888A6e1M9eP8WfBxKyV1B5Fc8lLcC0OULr7OYWBqlw=="
+  "resolved" "https://registry.npmjs.org/react-github-login/-/react-github-login-1.0.3.tgz"
+  "version" "1.0.3"
+
+"react-google-login@^5.2.2":
+  "integrity" "sha512-JUngfvaSMcOuV0lFff7+SzJ2qviuNMQdqlsDJkUM145xkGPVIfqWXq9Ui+2Dr6jdJWH5KYdynz9+4CzKjI5u6g=="
+  "resolved" "https://registry.npmjs.org/react-google-login/-/react-google-login-5.2.2.tgz"
+  "version" "5.2.2"
+  dependencies:
+    "@types/react" "*"
+    "prop-types" "^15.6.0"
 
 "react-input-emoji@^4.1.0":
   "integrity" "sha512-SYg+iJcaFMs7A3zjX/lLxiwGO9jutb0IAFRjYGX7mT3qFmYa/NYSsu6irm2RPFedqsat4nZi/VH4uhpx8N2PLw=="
@@ -7640,24 +7668,13 @@
     "use-composed-ref" "^1.0.0"
     "use-latest" "^1.0.0"
 
-"react@*", "react@^0.14.0 || ^15.0.0-0 || ^16.0.0 || ^17.0.0", "react@^16.8 || ^17.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2", "react@>= 16", "react@>=16.8", "react@>=16.8.0", "react@>=17.0.x", "react@17.0.2":
+"react@*", "react@^0.14.0 || ^15.0.0-0 || ^16.0.0 || ^17.0.0", "react@^15.6.1", "react@^16 || ^17", "react@^16.0.0", "react@^16.8 || ^17.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2", "react@>= 16", "react@>=16.8", "react@>=16.8.0", "react@>=17.0.x", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
   dependencies:
     "loose-envify" "^1.1.0"
     "object-assign" "^4.1.1"
-
-"react@^15.6.1":
-  "integrity" "sha512-5/MMRYmpmM0sMTHGLossnJCrmXQIiJilD6y3YN3TzAwGFj6zdnMtFv6xmi65PHKRV+pehIHpT7oy67Sr6s9AHA=="
-  "resolved" "https://registry.npmjs.org/react/-/react-15.7.0.tgz"
-  "version" "15.7.0"
-  dependencies:
-    "create-react-class" "^15.6.0"
-    "fbjs" "^0.8.9"
-    "loose-envify" "^1.1.0"
-    "object-assign" "^4.1.0"
-    "prop-types" "^15.5.10"
 
 "react@>=15.0.0 <17.0.0":
   "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
